@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Logged In</title>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        main {
+            width: 98%;
+            padding: 1%;
+        }
+    </style>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+</head>
+  <!-- ===================================================================== -->
+<body>
+    <!-- ------------------------------------------------------ -->
+    <nav>
+        <!--If user is logged in then display ndessage -->
+        {% if request.session.user_logged_in.logged_in == True %}
+            <h1>You are logged in {{request.session.user_logged_in.first_name}}!</h1>
+        {% endif %}
+    </nav>
+    <!-- ------------------------------------------------------ -->
+    <a href="/users/reg_login">Back to login page</a>
+    <main>
+        <h1>Thank you for logging in!</h1>
+
+        <a href="/users/logout">Logout</a>
+    </main>
+    <!-- ------------------------------------------------------ -->
+</body>
+</html>

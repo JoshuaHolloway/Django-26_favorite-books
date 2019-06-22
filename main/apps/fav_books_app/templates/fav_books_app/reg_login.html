@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>New</title>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        main {
+            border: black 1px solid;
+
+            width: 98%;
+            margin: 0.5%;
+            align-items: center;
+            padding: 0.5%;
+            text-align: center;
+        }
+
+        table tr td {
+            width: 50px;
+            height: 50px;
+        }
+
+        .color1 {
+            background: blue;
+        }
+
+        .color2 {
+            background: red;
+        }
+
+        #submit-button, #submit-button-login, #submit-button-login-admin {
+            background-color: red;
+            color: white;
+            width: 50%;
+            margin-left: 49%;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        #first_name,        #last_name,
+        #email,             #password, #password-confirm,
+        #email-login,       #password-login,
+        #email-login-admin, #password-login-admin {
+            border-color: black;
+            width: 50%;
+            float: right;
+        }
+
+        #left-col, #right-col {
+            width: 49%;
+            display: inline-block;
+            vertical-align: top;
+            padding: 0.5%;
+
+            <!-- background: blue;-->
+            <!-- opacity: 0.5;-->
+        }
+
+        #right-col-top, #right-col-bottom{
+            height: 200px;
+            <!-- width: 100px;-->
+        }
+
+
+        /* DEBUG */
+        /*
+        #right-col-top{ background: red; }
+        #right-col-bottom{ background: blue; }
+        */
+
+
+    </style>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(
+            function () {
+                // Upon click of button-1 do the following
+                $('#debug').on('click', function () {
+                    alert('debug');
+                });
+            }
+        );
+            //----------------------------------------------------------------------
+    </script>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+</head>
+  <!-- ===================================================================== -->
+<body>
+    <!-- ------------------------------------------------------ -->
+    <nav>
+        <!--If user is logged in then display message -->
+        {% if request.session.user_logged_in.logged_in == True %}
+            <h1>You are logged in {{request.session.user_logged_in.first_name}}!</h1>
+            <a href="/users/logout">Logout</a>
+        {% endif %}
+    </nav>
+    <!-- ------------------------------------------------------ -->
+    <main>
+        <div id="left-col">
+            <h1>Register Here!</h1>
+
+                <form action='/users/reg' method='post'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="first_name">First Name: </label>
+                    <input type="text" id="first_name" name="first_name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name: </label>
+                    <input type="text" id="last_name" name="last_name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="text" id="email" name="email" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="text" id="password" name="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="password-confirm">Confirm Password: </label>
+                    <input type="text" id="password-confirm" name="password-confirm" class="form-control">
+                </div>
+
+                <!-- submit-button -->
+                <input type='submit' id="submit-button" name="submit-button" value='Register!' class="form-control"
+                       class="shadow-lg p-3 mb-5 bg-white rounded">
+            </form>
+        </div> <!-- left-col -->
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <div id="right-col">
+            <div id="right-col-top">
+                <h1>Login Here!</h1>
+                <form action='/users/userLogin' method='post'>
+                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="email-login">Email: </label>
+                        <input type="text" id="email-login" name="email-login" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password-login">Password: </label>
+                        <input type="text" id="password-login" name="password-login" class="form-control">
+                    </div>
+
+                    <!-- submit-button -->
+                    <input type='submit' id="submit-button-login" name="submit-button-login" value='Login!' class="form-control"
+                           class="shadow-lg p-3 mb-5 bg-white rounded">
+                </form>
+            </div> <!--"right-col-top"-->
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div id="right-col-bottom">
+                <h2>Admin Login</h2>
+                <form action='/users/adminLogin' method='post'>
+                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="email-login-admin">Email: </label>
+                        <input type="text" id="email-login-admin" name="email-login-admin" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password-login-admin">Password: </label>
+                        <input type="text" id="password-login-admin" name="password-login-admin" class="form-control">
+                    </div>
+
+                    <!-- submit-button -->
+                    <input type='submit' id="submit-button-login-admin" name="submit-button-login-admin" value='Login!' class="form-control"
+                           class="shadow-lg p-3 mb-5 bg-white rounded">
+                </form>
+            </div> <!--"right-col-bottom"-->
+
+        </div> <!-- right-col-->
+
+    </main>
+</body>
+</html>
