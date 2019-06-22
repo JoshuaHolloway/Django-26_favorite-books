@@ -1,3 +1,3 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 def index(request):
-    return HttpResponse("hello")
+    return render(request, "fav_books_app/index.html")
