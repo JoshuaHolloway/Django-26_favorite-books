@@ -13,4 +13,5 @@ urlpatterns = [
 
     # Add
     url(r'^books/add', views.add),
+    url(r'^books/show/(?P<book_id>\d+)$', views.show),
 ]

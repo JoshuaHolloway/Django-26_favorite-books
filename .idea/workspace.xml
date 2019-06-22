@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="026fae9e-889d-4d03-9433-78404300b019" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/migrations/0002_remove_book_description.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +23,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/urls.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="308">
-                      <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+                    <state relative-caret-position="260">
+                      <caret line="15" column="33" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="33" />
                       <folding>
                         <element signature="e#0#32#0" expanded="true" />
                       </folding>
@@ -39,8 +39,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/models.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="484">
-                      <caret line="79" column="28" lean-forward="true" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+                    <state relative-caret-position="176">
+                      <caret line="65" column="43" lean-forward="true" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
                       <folding>
                         <element signature="e#0#28#0" expanded="true" />
                         <element signature="e#127#2405#0" />
@@ -58,12 +58,12 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="877">
-                  <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+                <state relative-caret-position="416">
+                  <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
                   <folding>
                     <element signature="e#0#59#0" expanded="true" />
-                    <element signature="e#324#369#0" />
                     <element signature="e#520#556#0" />
+                    <element signature="e#710#755#0" />
                     <element signature="e#707#743#0" />
                     <element signature="e#943#1098#0" />
                     <element signature="e#1595#2219#0" />
@@ -75,11 +75,23 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="745">
+                  <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+                  <folding>
+                    <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+                <state relative-caret-position="437">
+                  <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
                   <folding>
                     <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                   </folding>
@@ -117,6 +129,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>wall</find>
+      <find>show</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,9 +140,10 @@
       <list>
         <option value="$PROJECT_DIR$/main/fav_books_proj/settings.py" />
         <option value="$PROJECT_DIR$/main/fav_books_proj/urls.py" />
-        <option value="$PROJECT_DIR$/main/apps/fav_books_app/urls.py" />
         <option value="$PROJECT_DIR$/main/apps/fav_books_app/models.py" />
+        <option value="$PROJECT_DIR$/main/apps/fav_books_app/urls.py" />
         <option value="$PROJECT_DIR$/main/apps/fav_books_app/views.py" />
+        <option value="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html" />
         <option value="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html" />
       </list>
     </option>
@@ -153,6 +167,41 @@
             <path>
               <item name="Django-26_favorite-books" type="b2602c69:ProjectViewProjectNode" />
               <item name="Django-26_favorite-books" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Django-26_favorite-books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Django-26_favorite-books" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Django-26_favorite-books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Django-26_favorite-books" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Django-26_favorite-books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Django-26_favorite-books" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="fav_books_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Django-26_favorite-books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Django-26_favorite-books" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="fav_books_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Django-26_favorite-books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Django-26_favorite-books" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="fav_books_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="fav_books_app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -223,16 +272,16 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Python Console" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49687034" weight="0.32879817" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49659047" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49458483" weight="0.33105022" />
-      <window_info active="true" anchor="bottom" id="Debug" order="7" sideWeight="0.74087447" visible="true" weight="0.36301368" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49418372" weight="0.33105022" />
+      <window_info active="true" anchor="bottom" id="Debug" order="7" sideWeight="0.7400722" visible="true" weight="0.36225265" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" content_ui="combo" id="Project" order="11" sideWeight="0.25912556" side_tool="true" visible="true" weight="0.36301368" />
+      <window_info anchor="bottom" content_ui="combo" id="Project" order="11" sideWeight="0.2599278" side_tool="true" visible="true" weight="0.36225265" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -243,18 +292,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/apps/fav_books_app/views.py</url>
-          <line>122</line>
+          <line>125</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/apps/fav_books_app/views.py</url>
-          <line>124</line>
+          <line>127</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/apps/fav_books_app/views.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="7" />
+          <line>134</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -288,6 +337,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ERD.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://C:/apps/Anaconda3/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/reg_login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -302,13 +361,10 @@
     <entry file="file://$PROJECT_DIR$/wireframe.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ERD.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="79" column="28" lean-forward="true" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+        <state relative-caret-position="176">
+          <caret line="65" column="43" lean-forward="true" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#127#2405#0" />
@@ -316,21 +372,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/apps/Anaconda3/Lib/site-packages/django/core/handlers/base.py">
+    <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="184" selection-start-line="184" selection-end-line="184" />
+        <state relative-caret-position="260">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="877">
-          <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+        <state relative-caret-position="416">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
-            <element signature="e#324#369#0" />
             <element signature="e#520#556#0" />
+            <element signature="e#710#755#0" />
             <element signature="e#707#743#0" />
             <element signature="e#943#1098#0" />
             <element signature="e#1595#2219#0" />
@@ -341,20 +400,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/urls.py">
+    <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state relative-caret-position="745">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="437">
+          <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
           </folding>

@@ -9,6 +9,9 @@ def get_user_info(user_id):
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 def get_all_users_info():
     return {'users': User.objects.all()}
+# ----------------------------------------------------------------------------------------------------------------------
+def get_book_info(book_id):
+    return {'book': Book.objects.get(id=book_id)}
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 def get_all_books_info():
     return {'books': Book.objects.all()}
@@ -126,6 +129,7 @@ def add(request):
     user = User.objects.get(id=user_id)
     book = Book.objects.create(title=title, user=user)
 
-
     return redirect("/index")
 # ======================================================================================================================
+def show(request, book_id):
+    return render(request, "fav_books_app/show.html", get_book_info(book_id))

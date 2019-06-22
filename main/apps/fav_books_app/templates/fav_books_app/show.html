@@ -65,30 +65,32 @@
     <!-- ------------------------------------------------------ -->
     <main>
         <div id="left-col">
+            <h2>{{book.title}}</h2>
+
+            <p>Added by: {{book.user.first_name}}</p>
+            <p>Added on: {{book.created_at}}</p>
+            <p>Last updated on: {{book.updated_at}}</p>
+
+
+            <!-- TODO: Change to /books/edit -->
             <form action='/books/add' method='post'>
             {% csrf_token %}
-                <div class="form-group">
-                    <label for="title">Title: </label>
-                    <input type="text" id="title" name="title" class="form-control">
-                </div>
 
                 <!-- TODO: Description (text-area)-->
 
                 <!-- submit-button -->
-                <input type='submit' id="submit-button" name="submit-button" value='Add' class="form-control"
+                <input type='submit' id="submit-button" name="submit-button" value='Update' class="form-control"
                        class="shadow-lg p-3 mb-5 bg-white rounded">
             </form>
+
+            <!-- TODO: Add BUTTON (no form needed) for DELETE -->
+
         </div> <!-- left-col -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div id="right-col">
-            <h2>All books</h2>
-            <!-- TODO: Loop over books with each in a div -->
-            {% for book in books reversed %}
-                <div id="book_box">
-                    <a href="/books/show/{{book.id}}">{{book.title}}</a>
-                    <p>added by {{book.user.first_name}}</p>
-                </div>
-            {% endfor %}
+            <h2>Users Who Like This Book</h2>
+            <!-- TODO: Loop over users that like this book div -->
+
 
         </div> <!-- right-col-->
     </main>
