@@ -58,16 +58,6 @@ class UsersManager(models.Manager):
 #   3. The many-tom-many relationship now has the intermediate table of
 #      "favorites" instead of "books_authors"
 # ======================================================================================================================
-# Create your models here.
-class Book(models.Model):
-  title = models.CharField(max_length=255)
-  # description = models.TextField()
-  created_at = models.DateTimeField(auto_now_add=True)
-  updated_at = models.DateTimeField(auto_now=True)
-
-  def __repr__(self):
-    return f"Book: ({self.title})"
-# ======================================================================================================================
 class User(models.Model):
 
     # From The-Wall
@@ -79,9 +69,19 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = UsersManager()
 
-    # From Books w. Templates
-    books = models.ManyToManyField(Book, related_name="users")
+    ## From Books w. Templates
+    #books = models.ManyToManyField(Book, related_name="users")
 
     def __repr__(self):
-        return f"Users: ({self.first_name}, {self.last_name}, {self.email}), {self.password_hash})"
+        return f"User: ({self.first_name}, {self.last_name}, {self.email}, {self.password_hash})"
 # ======================================================================================================================
+# Create your models here.
+class Book(models.Model):
+  title = models.CharField(max_length=255)
+  # description = models.TextField()
+  user    = models.ForeignKey(User, related_name="books")
+  created_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(auto_now=True)
+
+  def __repr__(self):
+    return f"Book: ({self.title})"

@@ -122,8 +122,10 @@ def add(request):
 
     title = request.POST['title']
 
-    # TODO: Queries to add row to table
-    book = Book.objects.create(title=title)
+    user_id = request.session['user_logged_in']['id']
+    user = User.objects.get(id=user_id)
+    book = Book.objects.create(title=title, user=user)
+
 
     return redirect("/index")
 # ======================================================================================================================

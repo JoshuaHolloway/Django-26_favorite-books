@@ -82,11 +82,12 @@
         </div> <!-- left-col -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div id="right-col">
-
+            <h2>All books</h2>
             <!-- TODO: Loop over books with each in a div -->
             {% for book in books reversed %}
                 <div id="book_box">
-                    <p>{{book.title}}</p>
+                    <a href="#">{{book.title}}</a>
+                    <p>added by {{book.user.first_name}}</p>
                 </div>
             {% endfor %}
 
