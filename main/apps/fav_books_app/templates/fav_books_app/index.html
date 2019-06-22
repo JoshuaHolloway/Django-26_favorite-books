@@ -9,13 +9,87 @@
         <link rel="stylesheet" href="{% static 'app_name/css/style.css' %}">
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+
+            #submit-button {
+                background-color: red;
+                color: white;
+                width: 50%;
+                margin-left: 49%;
+                box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+            }
+
+            label {
+                display: inline-block;
+            }
+
+            #title, #description {
+                border-color: black;
+                width: 50%;
+                float: right;
+            }
+
+            #left-col, #right-col {
+                width: 49%;
+                display: inline-block;
+                vertical-align: top;
+                padding: 0.5%;
+
+                /* DEBUG */
+                /*
+                background: blue;
+                opacity: 0.5;
+                */
+            }
+
+            #right-col-top, #right-col-bottom{
+                height: 200px;
+                <!-- width: 100px;-->
+            }
+
+        </style>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <script src="{% static 'app_name/js/script.js' %}"></script>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     </head>
     <!-- ============================================================================================================-->
-    <body>
-        <h1>HELLO from HTML</h1>
-    </body>
+    <!-- ------------------------------------------------------ -->
+    <nav>
+        <!--If user is logged in then display message -->
+        {% if request.session.user_logged_in.logged_in == True %}
+            <h1>You are logged in {{request.session.user_logged_in.first_name}}!</h1>
+            <a href="/users/logout">Logout</a>
+        {% endif %}
+    </nav>
+    <!-- ------------------------------------------------------ -->
+    <main>
+        <div id="left-col">
+            <h2></h2>
+            <form action='/books/add' method='post'>
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" name="title" class="form-control">
+                </div>
+
+                <!-- TODO: Description (text-area)-->
+
+                <!-- submit-button -->
+                <input type='submit' id="submit-button" name="submit-button" value='Add' class="form-control"
+                       class="shadow-lg p-3 mb-5 bg-white rounded">
+            </form>
+        </div> <!-- left-col -->
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <div id="right-col">
+
+            <!-- TODO: Loop over books with each in a div -->
+            {% for book in books reversed %}
+                <div id="book_box">
+                    <p>{{book.title}}</p>
+                </div>
+            {% endfor %}
+
+        </div> <!-- right-col-->
+    </main>
 </html>

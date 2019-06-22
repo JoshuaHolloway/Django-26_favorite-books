@@ -10,4 +10,7 @@ urlpatterns = [
     url(r'^users/reg',       views.register),
     url(r'^users/userLogin', views.userLogin),
     url(r'^users/logout',    views.logout),
+
+    # Add
+    url(r'^books/add', views.add),
 ]
