@@ -104,7 +104,7 @@
             {% for book in books reversed %}
                 <div id="book_box">
                     <p><b>Title: </b><a href="/books/show/{{book.id}}">{{book.title}}</a></p>
-                    <p>(<b>added by:</b> {{book.user.first_name}} {{book.user.last_name}})</p>
+                    <p>(<b>added by:</b> {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}})</p>
                     <p><b>Description:</b> {{book.description}}</p>
                 </div>
             {% endfor %}

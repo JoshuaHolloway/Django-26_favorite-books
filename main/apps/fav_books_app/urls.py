@@ -12,8 +12,10 @@ urlpatterns = [
     url(r'^users/logout',    views.logout),
 
     # Add
-    url(r'^books/add', views.add),
+    url(r'^books/add', views.add), # TODO: Should add be different than addToFavs???
     url(r'^books/show/(?P<book_id>\d+)$', views.show),
+
+    url(r'^books/addToFavs/(?P<book_id>\d+)$', views.addToFavs),
 
     # Edit
 

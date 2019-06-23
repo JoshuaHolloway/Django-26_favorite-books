@@ -138,3 +138,13 @@ def delete(request, book_id):
     Book.objects.get(id=book_id).delete()
     return redirect("/index")
 # ======================================================================================================================
+def addToFavs(request, book_id):
+
+    # TODO: Add this book to favorites list
+
+
+    book = Book.objects.get(id=book_id)
+
+
+
+    return redirect("/index")

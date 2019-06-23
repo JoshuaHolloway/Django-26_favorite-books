@@ -83,11 +83,11 @@
         <div id="left-col">
             <h2>{{book.title}}</h2>
 
-            <p><b>Added by:</b> {{book.user.first_name}} {{book.user.last_name}}</p>
+            <p><b>Added by:</b> {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
             <p><b>Added on:</b> {{book.created_at}}</p>
             <p><b>Last updated on:</b> {{book.updated_at}}</p>
 
-            {% if request.session.user_logged_in.id == book.user.id %}
+            {% if request.session.user_logged_in.id == book.uploaded_by.id %}
                 <form action='/books/edit' method='post'>
                 {% csrf_token %}
                     <!-- text-area -->
@@ -107,6 +107,7 @@
                 </form>
             {% else %}
                 <p><b>Description:</b> {{book.description}}</p>
+                <a href="">Add to Favorites</a>
             {% endif %}
 
         </div> <!-- left-col -->
@@ -115,11 +116,11 @@
             <h2>Users Who Like This Book</h2>
             <!-- TODO: Loop over users that like this book div -->
 
-            <p>{{book.user.first_name}}</p>
+            <p>{{book.uploaded_by.first_name}}</p>
 
             {% for book in books reversed %}
                 <div id="book_box">
-                    <p>{{book.user.first_name}} {{book.user.last_name}}<a href="/books/unfavorite/{{book.id}}">{{book.title}}</a> </p>
+                    <p>{{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}<a href="/books/unfavorite/{{book.id}}">{{book.title}}</a> </p>
                 </div>
             {% endfor %}
         </div> <!-- right-col-->
