@@ -10,14 +10,26 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
-
-            #submit-button {
+            #submit-button, #delete-button {
                 background-color: red;
                 color: white;
-                width: 50%;
-                margin-left: 49%;
+                width: 30%;
                 box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+                float: right;
             }
+
+            #submit-button {
+                background-color: white;
+                color: black;
+                margin-left: 10px; /* gap between buttons */
+            }
+
+            #delete-button {
+                background-color: red;
+                color: white;
+            }
+
+
 
             label {
                 display: inline-block;
@@ -77,22 +89,28 @@
 
 
             {% if request.session.user_logged_in.id == book.user.id %}
-                <!-- TODO: Change to /books/edit -->
-                <form action='/books/add' method='post'>
+                <form action='/books/edit' method='post'>
                 {% csrf_token %}
-
                     <!-- text-area -->
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea class="form-control" class="field" id="description" name="description" rows="3">{{book.description}}</textarea>
                     </div>
-
-                    <!-- submit-button -->
-                    <input type='submit' id="submit-button" name="submit-button" value='Update' class="form-control"
-                           class="shadow-lg p-3 mb-5 bg-white rounded">
-
+                    <!-- submit-button for Text-Area -->
+                    <input type='submit' id="submit-button" name="submit-button" value='Update' class="form-control">
                 </form>
-                <!-- TODO: Add BUTTON (no form needed) for DELETE -->
+
+                <!-- Form for edit button-->
+                <form action='/books/delete' method='post'>
+                {% csrf_token %}
+                    <!-- submit-button for Delete -->
+                    <input type='submit' id="delete-button" name="delete-button" value='Delete' class="form-control">
+                </form>
+
+
+
+
+
             {% endif %}
 
         </div> <!-- left-col -->

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="026fae9e-889d-4d03-9433-78404300b019" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/apps/fav_books_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/apps/fav_books_app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +72,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="572">
-                  <caret line="86" column="134" selection-start-line="86" selection-start-column="114" selection-end-line="86" selection-end-column="134" />
+                <state relative-caret-position="369">
+                  <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
                 </state>
               </provider>
             </entry>
@@ -83,8 +81,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="501">
-                  <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="47" />
+                <state relative-caret-position="267">
+                  <caret line="95" column="34" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -108,6 +106,8 @@
       <find>wall</find>
       <find>show</find>
       <find>message</find>
+      <find>label</find>
+      <find>button</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -378,20 +378,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wireframe.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="47" />
+        <state relative-caret-position="267">
+          <caret line="95" column="34" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wireframe.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/apps/fav_books_app/templates/fav_books_app/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="86" column="134" selection-start-line="86" selection-start-column="114" selection-end-line="86" selection-end-column="134" />
+        <state relative-caret-position="369">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
         </state>
       </provider>
     </entry>
