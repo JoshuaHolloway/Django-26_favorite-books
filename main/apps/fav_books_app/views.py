@@ -134,4 +134,7 @@ def show(request, book_id):
     book = Book.objects.get(id=book_id)
     return render(request, "fav_books_app/show.html", get_book_info(book_id))
 # ======================================================================================================================
+def delete(request, book_id):
+    Book.objects.get(id=book_id).delete()
+    return redirect("/index")
 # ======================================================================================================================

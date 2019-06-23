@@ -29,8 +29,6 @@
                 color: white;
             }
 
-
-
             label {
                 display: inline-block;
             }
@@ -87,7 +85,6 @@
             <p>Added on: {{book.created_at}}</p>
             <p>Last updated on: {{book.updated_at}}</p>
 
-
             {% if request.session.user_logged_in.id == book.user.id %}
                 <form action='/books/edit' method='post'>
                 {% csrf_token %}
@@ -101,16 +98,11 @@
                 </form>
 
                 <!-- Form for edit button-->
-                <form action='/books/delete' method='post'>
+                <form action='/books/{{book.id}}/delete' method='post'>
                 {% csrf_token %}
                     <!-- submit-button for Delete -->
                     <input type='submit' id="delete-button" name="delete-button" value='Delete' class="form-control">
                 </form>
-
-
-
-
-
             {% endif %}
 
         </div> <!-- left-col -->
