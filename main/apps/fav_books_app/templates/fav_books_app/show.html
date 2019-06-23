@@ -74,6 +74,8 @@
         {% if request.session.user_logged_in.logged_in == True %}
             <h1>You are logged in {{request.session.user_logged_in.first_name}}!</h1>
             <a href="/users/logout">Logout</a>
+            <br>
+            <a href="/index">Home</a>
         {% endif %}
     </nav>
     <!-- ------------------------------------------------------ -->
@@ -81,9 +83,9 @@
         <div id="left-col">
             <h2>{{book.title}}</h2>
 
-            <p>Added by: {{book.user.first_name}}</p>
-            <p>Added on: {{book.created_at}}</p>
-            <p>Last updated on: {{book.updated_at}}</p>
+            <p><b>Added by:</b> {{book.user.first_name}} {{book.user.last_name}}</p>
+            <p><b>Added on:</b> {{book.created_at}}</p>
+            <p><b>Last updated on:</b> {{book.updated_at}}</p>
 
             {% if request.session.user_logged_in.id == book.user.id %}
                 <form action='/books/edit' method='post'>
@@ -103,6 +105,8 @@
                     <!-- submit-button for Delete -->
                     <input type='submit' id="delete-button" name="delete-button" value='Delete' class="form-control">
                 </form>
+            {% else %}
+                <p><b>Description:</b> {{book.description}}</p>
             {% endif %}
 
         </div> <!-- left-col -->
@@ -111,7 +115,7 @@
             <h2>Users Who Like This Book</h2>
             <!-- TODO: Loop over users that like this book div -->
 
-            <p>added by {{book.user.first_name}}</p>
+            <p>{{book.user.first_name}}</p>
 
             {% for book in books reversed %}
                 <div id="book_box">

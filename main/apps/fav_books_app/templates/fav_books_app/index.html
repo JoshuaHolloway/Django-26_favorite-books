@@ -103,9 +103,9 @@
             <h2>All books</h2>
             {% for book in books reversed %}
                 <div id="book_box">
-                    <a href="/books/show/{{book.id}}">{{book.title}}</a>
-                    <p>(added by {{book.user.first_name}})</p>
-                    <p>{{book.description}}</p>
+                    <p><b>Title: </b><a href="/books/show/{{book.id}}">{{book.title}}</a></p>
+                    <p>(<b>added by:</b> {{book.user.first_name}} {{book.user.last_name}})</p>
+                    <p><b>Description:</b> {{book.description}}</p>
                 </div>
             {% endfor %}
 
