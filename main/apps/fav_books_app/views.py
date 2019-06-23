@@ -138,13 +138,13 @@ def delete(request, book_id):
     Book.objects.get(id=book_id).delete()
     return redirect("/index")
 # ======================================================================================================================
-def addToFavs(request, book_id):
+def like(request, book_id):
+    # Add this book to favorites list for specific-user
 
-    # TODO: Add this book to favorites list
-
-
+    user_id = request.session['user_logged_in']['id']
+    user = User.objects.get(id=user_id)
     book = Book.objects.get(id=book_id)
-
-
+    #book.liked_books.add(user) # BACKWARDS - liked_books is effectively member of User class after reverse-lookup
+    user.liked_books.add(book)
 
     return redirect("/index")

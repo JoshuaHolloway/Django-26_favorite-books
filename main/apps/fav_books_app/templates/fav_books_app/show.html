@@ -107,9 +107,8 @@
                 </form>
             {% else %}
                 <p><b>Description:</b> {{book.description}}</p>
-                <a href="">Add to Favorites</a>
+                <a href="/books/like/{{book.id}}">Add to Favorites</a>
             {% endif %}
-
         </div> <!-- left-col -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div id="right-col">
