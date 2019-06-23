@@ -23,7 +23,7 @@
                 display: inline-block;
             }
 
-            #title, #description {
+            #title {
                 border-color: black;
                 width: 50%;
                 float: right;
@@ -45,6 +45,10 @@
             #right-col-top, #right-col-bottom{
                 height: 200px;
                 <!-- width: 100px;-->
+            }
+
+            #description {
+                border: 1px black solid;
             }
 
         </style>
@@ -72,18 +76,24 @@
             <p>Last updated on: {{book.updated_at}}</p>
 
 
-            <!-- TODO: Change to /books/edit -->
-            <form action='/books/add' method='post'>
-            {% csrf_token %}
+            {% if request.session.user_logged_in.id == book.user.id %}
+                <!-- TODO: Change to /books/edit -->
+                <form action='/books/add' method='post'>
+                {% csrf_token %}
 
-                <!-- TODO: Description (text-area)-->
+                    <!-- text-area -->
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" class="field" id="description" name="description" rows="3">{{book.description}}</textarea>
+                    </div>
 
-                <!-- submit-button -->
-                <input type='submit' id="submit-button" name="submit-button" value='Update' class="form-control"
-                       class="shadow-lg p-3 mb-5 bg-white rounded">
-            </form>
+                    <!-- submit-button -->
+                    <input type='submit' id="submit-button" name="submit-button" value='Update' class="form-control"
+                           class="shadow-lg p-3 mb-5 bg-white rounded">
 
-            <!-- TODO: Add BUTTON (no form needed) for DELETE -->
+                </form>
+                <!-- TODO: Add BUTTON (no form needed) for DELETE -->
+            {% endif %}
 
         </div> <!-- left-col -->
         <!-- ------------------------------------------------------------------------------------------------------- -->

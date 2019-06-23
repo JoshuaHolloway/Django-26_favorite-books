@@ -122,19 +122,16 @@ def logout(request):
 # ======================================================================================================================
 # ======================================================================================================================
 def add(request):
-
     title = request.POST['title']
     description = request.POST['description']
-
     user_id = request.session['user_logged_in']['id']
     user = User.objects.get(id=user_id)
     book = Book.objects.create(title=title, description=description, user=user)
-
     return redirect("/index")
 # ======================================================================================================================
 def show(request, book_id):
     context = get_book_info(book_id)
     book = Book.objects.get(id=book_id)
-
-
     return render(request, "fav_books_app/show.html", get_book_info(book_id))
+# ======================================================================================================================
+# ======================================================================================================================
