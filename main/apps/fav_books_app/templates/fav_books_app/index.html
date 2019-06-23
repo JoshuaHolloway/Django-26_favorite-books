@@ -23,7 +23,7 @@
                 display: inline-block;
             }
 
-            #title, #description {
+            #title{
                 border-color: black;
                 width: 50%;
                 float: right;
@@ -45,6 +45,21 @@
             #right-col-top, #right-col-bottom{
                 height: 200px;
                 <!-- width: 100px;-->
+            }
+
+
+            .field {
+                  border-color: black;
+                  width: 50%;
+                  float: right;
+            }
+
+            #description {
+                border: 1px black solid;
+            }
+
+            #book_box {
+                  border: 1px black solid;
             }
 
         </style>
@@ -72,7 +87,10 @@
                     <input type="text" id="title" name="title" class="form-control">
                 </div>
 
-                <!-- TODO: Description (text-area)-->
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" class="field" id="description" name="description" rows="3"></textarea>
+                </div>
 
                 <!-- submit-button -->
                 <input type='submit' id="submit-button" name="submit-button" value='Add' class="form-control"
@@ -82,11 +100,11 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div id="right-col">
             <h2>All books</h2>
-            <!-- TODO: Loop over books with each in a div -->
             {% for book in books reversed %}
                 <div id="book_box">
                     <a href="/books/show/{{book.id}}">{{book.title}}</a>
-                    <p>added by {{book.user.first_name}}</p>
+                    <p>(added by {{book.user.first_name}})</p>
+                    <p>{{book.description}}</p>
                 </div>
             {% endfor %}
 

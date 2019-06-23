@@ -91,7 +91,13 @@
             <h2>Users Who Like This Book</h2>
             <!-- TODO: Loop over users that like this book div -->
 
+            <p>added by {{book.user.first_name}}</p>
 
+            {% for book in books reversed %}
+                <div id="book_box">
+                    <p>{{book.user.first_name}} {{book.user.last_name}}<a href="/books/unfavorite/{{book.id}}">{{book.title}}</a> </p>
+                </div>
+            {% endfor %}
         </div> <!-- right-col-->
     </main>
 </html>
