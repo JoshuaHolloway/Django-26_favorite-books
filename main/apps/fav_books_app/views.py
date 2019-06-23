@@ -132,7 +132,16 @@ def add(request):
 def show(request, book_id):
     context = get_book_info(book_id)
     book = Book.objects.get(id=book_id)
-    return render(request, "fav_books_app/show.html", get_book_info(book_id))
+
+    # List of users who like the book
+    users_who_like_book = Book.objects.first().users_who_like.all()
+
+    context = {
+        'book': Book.objects.get(id=book_id),
+        'users_who_like_book': users_who_like_book
+    }
+
+    return render(request, "fav_books_app/show.html", context)
 # ======================================================================================================================
 def delete(request, book_id):
     Book.objects.get(id=book_id).delete()
@@ -144,7 +153,25 @@ def like(request, book_id):
     user_id = request.session['user_logged_in']['id']
     user = User.objects.get(id=user_id)
     book = Book.objects.get(id=book_id)
-    #book.liked_books.add(user) # BACKWARDS - liked_books is effectively member of User class after reverse-lookup
-    user.liked_books.add(book)
 
-    return redirect("/index")
+
+    #book.liked_books.add(user) # BACKWARDS - liked_books is effectively member of User class after reverse-lookup
+    #user.liked_books.add(book)
+    book.users_who_like.add(user)
+
+
+
+
+    print(book.users_who_like.all())
+
+
+    # To get a list of users who like a book:
+    users_who_like_the_book = Book.objects.first().users_who_like.all()
+    print(users_who_like_the_book)
+
+    # To get the list of books a user likes:
+    list_of_books_a_user_likes = User.objects.first().liked_books.all()
+    print(list_of_books_a_user_likes)
+
+
+    return redirect("/books/show/" + str(book_id))

@@ -68,17 +68,24 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     </head>
     <!-- ============================================================================================================-->
-    <!-- ------------------------------------------------------ -->
-    <nav>
-        <!--If user is logged in then display message -->
-        {% if request.session.user_logged_in.logged_in == True %}
-            <h1>You are logged in {{request.session.user_logged_in.first_name}}!</h1>
-            <a href="/users/logout">Logout</a>
-            <br>
-            <a href="/index">Home</a>
-        {% endif %}
-    </nav>
-    <!-- ------------------------------------------------------ -->
+    <body>
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <nav>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Welcome {{request.session.user_logged_in.first_name}}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- ------------------------------------------------------------------------------------------------------- -->
     <main>
         <div id="left-col">
             <h2>{{book.title}}</h2>
@@ -115,13 +122,14 @@
             <h2>Users Who Like This Book</h2>
             <!-- TODO: Loop over users that like this book div -->
 
-            <p>{{book.uploaded_by.first_name}}</p>
+            <p>{{users_who_like_book}}</p>
 
-            {% for book in books reversed %}
+            {% for user in users_who_like_book reversed %}
                 <div id="book_box">
-                    <p>{{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}<a href="/books/unfavorite/{{book.id}}">{{book.title}}</a> </p>
+                    <p>{{user.first_name}} {{user.last_name}}<a href="/books/unfavorite/{{book.id}}">{{book.title}}</a> </p>
                 </div>
             {% endfor %}
         </div> <!-- right-col-->
     </main>
+    </body>
 </html>

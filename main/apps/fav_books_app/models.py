@@ -58,7 +58,7 @@ class UsersManager(models.Manager):
 #   3. The many-tom-many relationship now has the intermediate table of
 #      "favorites" instead of "books_authors"
 # ======================================================================================================================
-class User(models.Model):
+class User(models.Model): # Cntrl+Alt+F7
 
     # From The-Wall
     first_name = models.CharField(max_length=32)

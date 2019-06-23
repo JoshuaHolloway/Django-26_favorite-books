@@ -91,15 +91,27 @@
 </head>
   <!-- ===================================================================== -->
 <body>
-    <!-- ------------------------------------------------------ -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
     <nav>
         <!--If user is logged in then display message -->
         {% if request.session.user_logged_in.logged_in == True %}
-            <h1>You are logged in {{request.session.user_logged_in.first_name}}!</h1>
-            <a href="/users/logout">Logout</a>
-        {% endif %}
+
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Welcome {{request.session.user_logged_in.first_name}}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Logout</a>
+                </li>
+            </ul>
+      {% endif %}
     </nav>
-    <!-- ------------------------------------------------------ -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
     <main>
         <div id="left-col">
             <h1>Register Here!</h1>
